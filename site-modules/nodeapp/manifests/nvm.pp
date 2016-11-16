@@ -1,13 +1,23 @@
+# Source: http://www.mydevplayground.info/openbadges/.puppet-manifests/nvm.pp
+
 class nvm ($node_version) {
 
-  Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin'], }
+  Exec {
+    path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin'],
+  }
+
+  # Set the node version we're using
+  exec { "set-node-version":
+    command => "bash -c \"source /home/vagrant/nvm/nvm.sh && nvm alias default ${node_version}\"",
+    require => Exec["install-node"],
+    unless => "bash -c \"source /home/vagrant/nvm/nvm.sh && nvm ls | grep -qc \"default -> ${node_version}\"",
+  }
 
   exec { "install-node":
     command => "bash -c \"source /home/vagrant/nvm/nvm.sh && nvm install ${node_version}\"",
-    require => [Vcsrepo['/home/vagrant/nvm']],
+    require => Vcsrepo['/home/vagrant/nvm'],
     creates => "/home/vagrant/nvm/${node_version}",
     timeout => 0,
-    notify => [File["set-node-permissions"]]
   }
 
   # Ensure proper permissions for nvm (and node in general)
@@ -17,7 +27,7 @@ class nvm ($node_version) {
     recurse => true,
     owner  => "vagrant",
     group  => "vagrant",
-    subscribe => [Exec["install-node"]]
+    require => [Exec['install-node']]
   }
 
   vcsrepo { '/home/vagrant/nvm':
@@ -28,8 +38,8 @@ class nvm ($node_version) {
     group => "vagrant"
   }
 
-  #exec { "source-nvm":
-  #  command => "echo 'source /home/vagrant/nvm/nvm.sh' >> /home/vagrant/.bashrc",
-  #  onlyif => "grep -q 'source /home/vagrant/nvm/nvm.sh' /home/vagrant/.bashrc; test $? -eq 1",
-  #}
+  exec { "source-nvm":
+    command => "echo 'source /home/vagrant/nvm/nvm.sh' >> /home/vagrant/.bashrc",
+    onlyif => "grep -q 'source /home/vagrant/nvm/nvm.sh' /home/vagrant/.bashrc; test $? -eq 1",
+  }
 }

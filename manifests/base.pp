@@ -1,4 +1,4 @@
-$node_version = "v6.9.1"
+$node_version = "6.9.1"
 
 file { '/etc/motd':
 	content => "
@@ -6,7 +6,7 @@ file { '/etc/motd':
  - OS:      Ubuntu trusty-server-cloudimg-amd64
  - Node:    ${node_version}
  - IP:      ${ipaddress_eth1}
- - Code:    ~/vagrant/code/app
+ - Code:    ~/code
 \n"
 }
 

@@ -1,4 +1,4 @@
-class nodeapp($node_version = "v0.10.38") {
+class nodeapp($node_version = "6.9.1") {
 
     # Add some default path values
     Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${node_version}/bin"], }
