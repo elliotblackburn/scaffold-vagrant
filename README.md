@@ -71,10 +71,10 @@ You can configure various properties of the VM by creating a file named `vm_conf
 - **app_path** - Path to your application installation
 
 ```yml
-hostname: local.lybrary.org
+hostname: local.myapp.org
 ip: 192.168.33.10
 memory: 1024
-app_path: ./lybrary
+app_path: ./myapp
 ```
 
 If `vm_config.yml` is not present when you first run `vagrant up`, it will be automatically created with the default values found in [.vm_config_default.yml](.vm_config_default.yml).
