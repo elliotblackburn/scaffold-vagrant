@@ -1,0 +1,4 @@
+hostname: local.nodeapp.org
+ip: 192.168.33.10
+memory: 1024
+app_path: ./app
