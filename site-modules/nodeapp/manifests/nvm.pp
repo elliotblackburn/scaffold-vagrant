@@ -22,7 +22,7 @@ class nvm ($node_version) {
 
   # Ensure proper permissions for nvm (and node in general)
   file { "set-node-permissions":
-    path => "/home/vagrant/nvm/${node_version}",
+    path => "/home/vagrant/nvm",
     ensure => "directory",
     recurse => true,
     owner  => "vagrant",
