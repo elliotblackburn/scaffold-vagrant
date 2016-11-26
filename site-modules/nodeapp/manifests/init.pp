@@ -37,4 +37,10 @@ class nodeapp($node_version = "6.9.1") {
         owner  => "vagrant",
         group  => "vagrant"
     }
+
+    # Install and start Redis
+    class { 'redis':
+      conf_port => '6379',
+      conf_bind => '0.0.0.0',
+    }
 }

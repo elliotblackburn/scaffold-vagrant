@@ -1,6 +1,8 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    fsalum-redis (1.0.3)
+      thias-sysctl (>= 0.3.0)
     puppet-archive (0.4.4)
       puppetlabs-pe_gem (>= 0.0.1)
       puppetlabs-stdlib (>= 2.2.1)
@@ -11,6 +13,7 @@ FORGE
     puppetlabs-pe_gem (0.1.2)
     puppetlabs-stdlib (4.4.0)
     puppetlabs-vcsrepo (1.4.0)
+    thias-sysctl (1.0.6)
 
 PATH
   remote: site-modules/nodeapp
@@ -19,9 +22,10 @@ PATH
 
 DEPENDENCIES
   elliotblackburn-nodeapp (>= 0)
+  fsalum-redis (~> 1.0.3)
   puppet-archive (~> 0.4.4)
   puppetlabs-concat (~> 1.2.0)
   puppetlabs-mysql (~> 2.3.0)
   puppetlabs-stdlib (~> 4.4.0)
-  puppetlabs-vcsrepo (= 1.4.0)
+  puppetlabs-vcsrepo (~> 1.4.0)
 
