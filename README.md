@@ -1,6 +1,6 @@
-# Node, MySQL, NGinx Vagrant box
+# Node, MySQL, NGinx Vagrant template box
 
-A generic development environment for node apps with MySQL and nginx.
+A generic development environment for node apps with MySQL and nginx. If this looks useful to you then you should fork it and modify it to fit your specific project needs. I encourage contributions that you think might be useful to this base template!
 
 ## Prerequisites
 
@@ -47,20 +47,6 @@ vagrant ssh
 
 On the host you should now be able to access your web app by navigating to `local.nodeapp.org` or `192.168.33.10` in your browser.
 
-## Stopping and Starting Your App
-
-Once you have been through the setup process above, you can stop your app by logging in to the VM (`vagrant ssh`) and running:
-
-```bash
-sudo stop app
-```
-
-To start your app again run:
-
-```bash
-sudo start app
-```
-
 ## Configuring the VM
 
 You can configure various properties of the VM by creating a file named `vm_config.yml` in the `Node-Vagrant` root directory. The following properties are configurable:
@@ -81,4 +67,4 @@ If `vm_config.yml` is not present when you first run `vagrant up`, it will be au
 
 ## Credits
 
-This environment has been inspired by [Ghost's vagrant environment](https://github.com/TryGhost/Ghost-Vagrant).
+This environment template was been inspired by [Ghost's vagrant environment](https://github.com/TryGhost/Ghost-Vagrant).

@@ -28,4 +28,3 @@ DEPENDENCIES
   puppetlabs-mysql (~> 2.3.0)
   puppetlabs-stdlib (~> 4.4.0)
   puppetlabs-vcsrepo (~> 1.4.0)
-

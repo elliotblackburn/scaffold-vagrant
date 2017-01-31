@@ -17,11 +17,6 @@ class nodeapp($node_version = "6.9.1") {
         require => [Class["essentials"]]
     }
 
-    class { upstart:
-        node_version => $node_version,
-        require => [Class["essentials"]]
-    }
-
     # Install node with nvm
     class { nvm:
         node_version => $node_version,

@@ -2,11 +2,11 @@ $node_version = "6.9.1"
 
 file { '/etc/motd':
 	content => "
- Node, MySQL, and NGinx Vagrant Box
+ Node, MySQL, Redis, and NGinx Vagrant Box
  - OS:      Ubuntu trusty-server-cloudimg-amd64
  - Node:    ${node_version}
  - IP:      ${ipaddress_eth1}
- - Code:    ~/code
+ - Code:    ~/code/app
 \n"
 }
 
