@@ -1,20 +1,17 @@
 # OS Files
 .DS_Store
 
-# Local Vagrant Files
+# Vagrant Files
 .vagrant
 vm_config.yml
 
-# Local Librarian Files
+# Library caches
 .librarian
-modules/*
-!modules/.gitkeep
 .tmp
 
-# Local Repo Clone
-app/*
+# Puppet modules
+/provisioning/modules/*
+!provisioning/modules/.gitkeep
 
-# Other
-.idea/*
-*.iml
-projectFilesBackup
+# Application Source
+app/*
