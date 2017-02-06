@@ -35,6 +35,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: vm_external_config["ip"]
   config.vm.hostname = vm_external_config["hostname"]
+  
+  # node-inspector and vscode debug port
+  config.vm.network "forwarded_port", guest: 5858, host:5858
 
   config.vm.synced_folder vm_external_config["app_path"], "/home/vagrant/code/app", :nfs => true
 
