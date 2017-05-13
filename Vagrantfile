@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
   config.librarian_puppet.puppetfile_dir = "provisioning"
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "provisioning/manifests"
-    puppet.manifest_file = "base.pp"
+    puppet.manifest_file = "init.pp"
     puppet.module_path = "provisioning/modules"
   end
 end
