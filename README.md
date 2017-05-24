@@ -68,3 +68,7 @@ If `vm_config.yml` is not present when you first run `vagrant up`, it will be au
 ## Credits
 
 This environment template was been inspired by [Ghost's vagrant environment](https://github.com/TryGhost/Ghost-Vagrant).
+
+## Copyright & License
+
+Copyright (c) 2017 Elliot Blackburn - Released under the MIT license.
